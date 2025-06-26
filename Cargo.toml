@@ -1,0 +1,15 @@
+[package]
+name = "pipeline-front"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+leptos = { version = "0.8.2", features = ["csr"] }
+leptos-use = { version = "0.16.0-beta2", features = ["use_interval_fn", "use_raf_fn"] }
+thaw = {version = "0.5.0-beta"}
+reactive_stores = { version = "0.2.2" }
+leptos-leaflet = { version = "0.10.0", default-features = false, features = ["csr"] }
+web-sys = { version = "0.3.77", features = ["HtmlBodyElement"] }
+uuid = { version = "1.17.0", features = ["v4"] }
+chrono = { version = "0.4.41", features = ["serde", "wasm-bindgen"] }

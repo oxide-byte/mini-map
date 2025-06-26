@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/mini-map/tailwind-b0caf6b0170873ca.css" integrity="sha384-FPXrbrx4AaYWsckTBt8CrBsA6mSMwcvXmu024Y3I1t2VBPzFWVpYRgDB5Hma5iFP"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<head>
+    <base href="/mini-map/">
+    <title>Mini-Map</title>
+<link rel="modulepreload" href="/mini-map/pipeline-front-e33cbc7431b047a0.js" crossorigin="anonymous" integrity="sha384-eZsohXmjyXQW6G43JbrJ1GTIwvGavoBRv8P4nSoL8Gx+MKCUJTvroOZjWYIR27g6"><link rel="preload" href="/mini-map/pipeline-front-e33cbc7431b047a0_bg.wasm" crossorigin="anonymous" integrity="sha384-yCT08Q7OkwxETW6TYVMFRtNnLu50Nn5JUAua1OF+5svN17pUq5E1Wf+HVIE//0yE" as="fetch" type="application/wasm"></head>
+<body>
+<script type="module">
+import init, * as bindings from '/mini-map/pipeline-front-e33cbc7431b047a0.js';
+const wasm = await init({ module_or_path: '/mini-map/pipeline-front-e33cbc7431b047a0_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>

@@ -1,0 +1,7 @@
+# BUILDS
+/target
+/dist
+
+# RUST/ROVER INTELLIJ
+.idea
+*.iml
