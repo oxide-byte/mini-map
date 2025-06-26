@@ -25,6 +25,19 @@ pub fn Map() -> impl IntoView {
           <MapContainer style="height: 700px" center=Position::new(49.74250, 6.10000) zoom=8.0 set_view=true events>
               <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"/>
 
+            <Show
+                when=move || store.get().current_point.is_some()
+                fallback=|| ()
+            >
+                {move || {
+                    let current = store.get().current_point.clone().unwrap();
+                    view! {
+                        <Circle center=position!(current.lat, current.lng) color="blue" radius=200.0>
+                        </Circle>
+                    }
+                }}
+            </Show>
+
             <For
                 each=move || store.get().points_list
                 key=|point| (point.id, point.updated_at)
